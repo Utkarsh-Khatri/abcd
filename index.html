@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Happy Anniversary</title>
+<style>
+html,body{
+margin:0px;
+height:100%;
+background: url(background.jpeg)
+}
+.bg_heart{
+position:relative;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+background-image:url("https://i.pinimg.com/originals/51/d8/37/51d8374126446d495348b6032202126f.jpg");
+background-size:100% 100%;
+background-repeat: no-repeat;
+z-index:-1;
+}
+.container{
+position:absolute;
+top:0;
+left:0;
+height:100%;
+width:100%;
+text-align:center;
+color:rgb(222, 66, 66);
+font-family:cursive;
+}
+.heart{
+position:absolute;
+top:-50%;
+transform:rotate(-45deg);
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+}
+.heart:before{
+position:absolute;
+top:-50%;
+left:0;
+display:block;
+content:"";
+width:100%;
+height:100%;
+background:inherit;
+border-radius:100%;
+}
+.heart:after{
+position:absolute;
+top:0;
+right:-50%;
+display:block;
+content:"";
+width:100%;
+height:100%;
+background:inherit;
+border-radius:100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg_heart">
+</div>
+
+<div class="container">
+<h2 id="text1"></h2>
+</div>
+<script>
+var love = setInterval(function(){
+var r_num = Math.floor(Math.random() * 40) + 1;
+var r_size = Math.floor(Math.random() * 65) + 10;
+var r_left = Math.floor(Math.random() * 100) + 1;
+var r_bg = Math.floor(Math.random() * 25) + 100;
+var r_time = Math.floor(Math.random() * 5) + 5;
+$('.bg_heart').append("<div class='heart' style='width:"+r_size+"px;height:"+r_size+"px;left:"+r_left+"%;background:rgba(255,"+(r_bg-25)+","+r_bg+",1);-webkit-animation:love "+r_time+"s ease;-moz-animation:love "+r_time+"s ease;-ms-animation:love "+r_time+"s ease;animation:love "+r_time+"s ease'></div>");
+$('.bg_heart').append("<div class='heart' style='width:"+(r_size-10)+"px;height:"+(r_size-10)+"px;left:"+(r_left+r_num)+"%;background:rgba(255,"+(r_bg-25)+","+(r_bg+25)+",1);-webkit-animation:love "+(r_time+5)+"s ease;-moz-animation:love "+(r_time+5)+"s ease;-ms-animation:love "+(r_time+5)+"s ease;animation:love "+(r_time+5)+"s ease'></div>");
+},500);
+
+var i = 0;
+var txt1 = "Hi Mayalu.....! << Now I wan't to say something special to you. <<< Today our 3rd year together with each other has officially completed...! > Everyday with you malai sachee dherai special lagxa jati dherai time bitdai janxa teti tmro maya badhdai janxa < Although for some days hami dui jana bich ma sometimes problems haru aayo tara hami kaile pani ek arka bata separate hudainam.. << As the days goes < you get closer to me....! << Jiwan ko harek dukha sukha sabai tmi sanga bitauni mah mero wada garxu rw kaile pani tmlai dhokha dini wala xaina jiwan var...! > Rlnship ko starting ma maile garda bacheko vayepani aaja ko din samma aaipugda mero vanda badi tmro karan le rlnship chaleko xa and mah kaile pani feri tmlai dukhi banaudina..! << Tmi mero hijo aaja rw voli harek din banney xau rw arko janma hunxa vani harek janma ma mah tmi sanga ani afno jiwan bitaunu chahanxu... ! > Sadhai vari afu vanda aagadi tmlai rakhney xu maya maile gareko galti haru doraunu prayas sadhai garxu....! << I will always be with you and make sure that to bring your smile on your face....! >Kaile pani tmle malai gumauney xainau maya ...! << Mero bihani rati sabai tmi hou rw tmi nai rahaney xau mero priya << Happiest 3rd year anniversary to us I love you the most mero sanu please malai kaile pani xoderw najau life ma kaile pani hai oyy";
+var speed = 50;
+typeWriter();
+function typeWriter() {
+if (i < txt1.length) {
+if(txt1.charAt(i)=='<')
+document.getElementById("text1").innerHTML += '</br>'
+else if(txt1.charAt(i)=='>')
+document.getElementById("text1").innerHTML = ''
+else
+document.getElementById("text1").innerHTML += txt1.charAt(i);
+i++;
+setTimeout(typeWriter, speed);
+}
+}
+</script>
+</body>
+</html>
